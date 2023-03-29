@@ -38,10 +38,9 @@ func main() {
 	path := os.Getenv("BASE_PATH")
 	if path == "" {
 		log.Println("BASE_PATH not found, using current directory as default")
-		path = "."
 	}
 
-	http.Handle("/", http.FileServer(http.Dir(os.Getenv(path))))
+	http.Handle("/", http.FileServer(http.Dir(path)))
 
 	log.Println(http.ListenAndServe(cleanPort(port), nil))
 }
