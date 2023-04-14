@@ -32,7 +32,7 @@ func main() {
 
 	port := os.Getenv("SERVICE_PORT")
 	if port == "" {
-		log.Fatal("Missing SERVICE_PORT environment variable")
+		log.Fatalln("Missing SERVICE_PORT environment variable")
 	}
 
 	path := os.Getenv("BASE_PATH")
